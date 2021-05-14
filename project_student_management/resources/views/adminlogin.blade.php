@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -30,21 +31,26 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <form>
+            @if(Session::has('coc'))
+            <div class="alert alert-danger">
+              <button class="close" data-dismiss="alert">*</button>
+            <strong>{{session('coc')}}</strong>
+            </div>
+            @endif
+            <form method="post" action="{{url('isLogIn')}}">
               <h1>Login Form</h1>
+              @csrf
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
+                <input type="text" class="form-control" placeholder="Username" required="" name="username" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                <input type="password" class="form-control" placeholder="Password" required="" name="password" />
               </div>
               <div>
-                <a class="btn btn-default submit" href="index.html">Log in</a>
+                <input type="submit" class="btn btn-default submit" value="Login">
                 <a class="reset_pass" href="#">Lost your password?</a>
               </div>
-
               <div class="clearfix"></div>
-
               <div class="separator">
                 <p class="change_link">New to site?
                   <a href="#signup" class="to_register"> Create Account </a>

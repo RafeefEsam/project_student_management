@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,8 +16,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::view('loginpage', 'adminlogin');
 
-Route::view('login page', 'admin login');
+Route::get('loginpage',[App\Http\Controllers\AdminController::class, 'adminLogIn']);
+Route::post('isLogIn',[App\Http\Controllers\AdminController::class, 'adminLoged']);
 /*Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
