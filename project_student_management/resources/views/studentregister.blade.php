@@ -8,8 +8,7 @@
                  
                   <div class="x_content">
                     <br />
-                    <form acction="{{url('studentstore')}}" methos="post" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-
+                    <form action="{{url('studentstore')}}" method="post" id="demo-form2"  class="form-horizontal form-label-left" enctype="multipart/form-data">
                     @csrf
 
                       <div class="form-group">

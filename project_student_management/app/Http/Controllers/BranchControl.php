@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\student;
+use App\Models\branch;
 
-class StudentController extends Controller
+class BranchControl extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +24,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('studentregister');
+        return view('addbranch');
     }
 
     /**
@@ -35,14 +35,11 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        $student = new student;
-        $student ->sname = $request ->sname;
-        $student ->fname = $request ->fname;
-        $student ->class = $request ->class;
-        $student ->phnum = $request ->phnum;
-        $student ->email = $request ->email;
-        $student -> save();
-        return redirect('studentregisterform');
+          $branch = new branch;
+          $branch ->bsort = $request ->bsort;
+          $branch ->bfull = $request ->bfull;
+          $branch -> save();
+          return redirect('addbranch');
 
     }
 

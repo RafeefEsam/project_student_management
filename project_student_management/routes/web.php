@@ -19,11 +19,14 @@ Route::get('/', function () {
 Route::view('loginpage', 'adminlogin');
 Route::post('isLogIn',[App\Http\Controllers\AdminController::class, 'adminLoged']);
 Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'dashBoard'])->name('dashboard');
-//Route::get('/studentregister', [App\Http\Controllers\StudentController::class, 'create'])->name('studentregisterform');
 
-Route::get('studentregisterform',[App\Http\Controllers\StudentController::class, 'create']);
-
-
-//Route::post('/studentregister', [App\Http\Controllers\StudentController::class, 'store'])->name('studentstore');
+Route::get('studentregisterform',[App\Http\Controllers\StudentController::class,'create']);
 Route::post('studentstore',[App\Http\Controllers\StudentController::class, 'store']);
+
+
+Route::get('addbranch',[App\Http\Controllers\BranchControl::class,'create']);
+Route::post('branchstore',[App\Http\Controllers\BranchControl::class, 'store']);
+
+	
+
 
