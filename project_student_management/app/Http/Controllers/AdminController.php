@@ -7,7 +7,7 @@ use App\Models\admin;
 use Session;
 class AdminController extends Controller
 {
-    
+
     public function adminLogIn(){
     	return view('adminlogin');
     }
@@ -22,7 +22,7 @@ class AdminController extends Controller
     		return redirect('/loginpage/')->withInput();
     	}
     }
-   /* public function adminLogIn(){
-    	return view('admin login');
-    }*/
+   public function dashBoard(){
+    	return view('dashboard');
+    }
 }

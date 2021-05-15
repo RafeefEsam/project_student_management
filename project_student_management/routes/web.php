@@ -17,10 +17,17 @@ Route::get('/', function () {
 });
 
 Route::view('loginpage', 'adminlogin');
-
-Route::get('loginpage',[App\Http\Controllers\AdminController::class, 'adminLogIn']);
 Route::post('isLogIn',[App\Http\Controllers\AdminController::class, 'adminLoged']);
+Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'dashBoard'])->name('dashboard');
+
+
+
+
+
+
+
 /*Auth::routes();
+//Route::get('loginpage',[App\Http\Controllers\AdminController::class, 'adminLogIn']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 */
