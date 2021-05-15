@@ -19,7 +19,9 @@ Route::get('/', function () {
 Route::view('loginpage', 'adminlogin');
 Route::post('isLogIn',[App\Http\Controllers\AdminController::class, 'adminLoged']);
 Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'dashBoard'])->name('dashboard');
+Route::get('/studentregister', [App\Http\Controllers\StudentController::class, 'create'])->name('studentregisterform');
 
+Route::get('studentregisterform',[App\Http\Controllers\StudentController::class, 'create']);
 
 
 
