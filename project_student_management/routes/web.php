@@ -19,17 +19,11 @@ Route::get('/', function () {
 Route::view('loginpage', 'adminlogin');
 Route::post('isLogIn',[App\Http\Controllers\AdminController::class, 'adminLoged']);
 Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'dashBoard'])->name('dashboard');
-Route::get('/studentregister', [App\Http\Controllers\StudentController::class, 'create'])->name('studentregisterform');
+//Route::get('/studentregister', [App\Http\Controllers\StudentController::class, 'create'])->name('studentregisterform');
 
 Route::get('studentregisterform',[App\Http\Controllers\StudentController::class, 'create']);
 
 
+//Route::post('/studentregister', [App\Http\Controllers\StudentController::class, 'store'])->name('studentstore');
+Route::post('studentstore',[App\Http\Controllers\StudentController::class, 'store']);
 
-
-
-
-/*Auth::routes();
-//Route::get('loginpage',[App\Http\Controllers\AdminController::class, 'adminLogIn']);
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-*/
