@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -48,8 +47,44 @@ Route::get('studentregisterform',[App\Http\Controllers\StudentController::class,
 Route::post('studentstore',[App\Http\Controllers\StudentController::class, 'store']);
 Route::get('addbranch',[App\Http\Controllers\BranchControl::class,'create']);
 Route::post('branchstore',[App\Http\Controllers\BranchControl::class, 'store']);
-
+Route::get('branchshow',[App\Http\Controllers\BranchControl::class,'show']);
 
 	
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('studentregisterform',[App\Http\Controllers\StudentController::class,'create']);
+Route::post('studentstore',[App\Http\Controllers\StudentController::class, 'store']);
+Route::get('addbranch',[App\Http\Controllers\BranchControl::class,'create']);
+Route::post('branchstore',[App\Http\Controllers\BranchControl::class, 'store']);
+
+
+Route::get('/branch_edit/{id}', 
+    array(
+        'uses' =>  'App\Http\Controllers\BranchControl@edit','as'   =>  'branch.edit', )
+);
+
+Route::post('/branchupdate/{id}', 
+    array(
+        'uses' =>  'App\Http\Controllers\BranchControl@update', 
+        'as'   =>  'branch.update',
+    )
+);
+
+Route::get('/branch_delete/{id}', 
+    array(
+        'uses' =>  'App\Http\Controllers\BranchControl@destroy', 
+        'as'   =>  'branch.delete',
+    )
+);
+	
+
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

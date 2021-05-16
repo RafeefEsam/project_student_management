@@ -49,9 +49,10 @@ class BranchControl extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+         $branches = branch::paginate(5);
+        return view('branchdetails',compact('branches'));
     }
 
     /**
@@ -62,7 +63,8 @@ class BranchControl extends Controller
      */
     public function edit($id)
     {
-        //
+        $branches = branch::find($id);
+        return view('branchedit',compact('branches'));
     }
 
     /**
@@ -74,7 +76,12 @@ class BranchControl extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $branch = branch::find($id);
+        $branch->bsort = $request->bsort;
+        $branch->bfull = $request->bfull;
+        $branch->save();
+        return redirect ('branchshow');
     }
 
     /**
@@ -85,6 +92,8 @@ class BranchControl extends Controller
      */
     public function destroy($id)
     {
-        //
+        $branch = branch::find($id);
+        $branch->delete();
+        return redirect ('branchshow');
     }
 }
