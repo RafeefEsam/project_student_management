@@ -49,6 +49,7 @@ Route::get('addbranch',[App\Http\Controllers\BranchControl::class,'create']);
 Route::post('branchstore',[App\Http\Controllers\BranchControl::class, 'store']);
 Route::get('branchshow',[App\Http\Controllers\BranchControl::class,'show']);
 
+
 	
 
 
@@ -61,6 +62,9 @@ Route::get('studentregisterform',[App\Http\Controllers\StudentController::class,
 Route::post('studentstore',[App\Http\Controllers\StudentController::class, 'store']);
 Route::get('addbranch',[App\Http\Controllers\BranchControl::class,'create']);
 Route::post('branchstore',[App\Http\Controllers\BranchControl::class, 'store']);
+
+
+Auth::routes();
 
 
 Route::get('/branch_edit/{id}', 
@@ -83,6 +87,13 @@ Route::get('/branch_delete/{id}',
 );
 	
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/addcourse',[App\Http\Controllers\CourseController::class,'create']);
+
+Route::post('coursestore',[App\Http\Controllers\CourseController::class, 'store']);
+Route::get('courseshow',[App\Http\Controllers\CourseController::class, 'show']);
 
 
 Auth::routes();
