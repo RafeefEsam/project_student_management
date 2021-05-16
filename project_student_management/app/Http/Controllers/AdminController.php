@@ -16,13 +16,17 @@ class AdminController extends Controller
     	$admin = admin::where('username',$request->username)->where('password',$request->password)->get()->toArray();
     	if($admin){
     		$request->session()->put('admin_session', $admin[0]['id']);
-    		return redirect('dashboard/');
+    		// return view('dashboard');
     	}else{
     		session::flash('coc', 'email and password not match');
     		return redirect('/loginpage/')->withInput();
     	}
     }
-   public function dashBoard(){
-    	return view('dashboard');
-    }
+   public function dashBoard(bool b){
+         if (b){
+              view('dashboard');
+              return redirect('dashboard/')
+         }
+
+       }
 }

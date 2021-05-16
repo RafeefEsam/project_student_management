@@ -11,13 +11,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/' ,[App\Http\Controllers\AdminController::class, 'adminLoged'] );
+    // return view('');
+// );
 
 Route::view('loginpage', 'adminlogin');
 Route::post('isLogIn',[App\Http\Controllers\AdminController::class, 'adminLoged']);
-Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'dashBoard'])->name('dashboard');
+Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'adminLoged']);
 
 Route::get('studentdetails',[App\Http\Controllers\StudentController::class, 'show']);
 
