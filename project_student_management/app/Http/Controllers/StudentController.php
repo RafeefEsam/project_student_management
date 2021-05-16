@@ -52,9 +52,11 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+         $students = student::paginate(5);
+          return view('studentdetails',compact('students'));
+
     }
 
     /**
@@ -65,7 +67,9 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+         $students = student::find($id);
+         return view('studentedit',compact('students'));
+
     }
 
     /**
@@ -77,7 +81,16 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $student = student::find($id);
+
+        $student->sname = $request->sname;
+        $student->fname = $request->fname;
+        $student->class = $request->class;
+        $student->phnum = $request->phnum;
+        $student->email = $request->email;
+        $student->save();
+        return redirect ('studentdetails');
+
     }
 
     /**
@@ -88,6 +101,9 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $student = student::find($id);
+        $student->delete();
+        return redirect ('studentdetails');
+
     }
 }
