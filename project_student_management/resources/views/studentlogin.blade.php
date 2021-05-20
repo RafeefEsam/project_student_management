@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gentelella Alela! | </title>
+    <title>STudent | </title>
 
     <!-- Bootstrap -->
     <link href="{!!asset('public/theme/vendors/bootstrap/dist/css/bootstrap.min.css')!!}" rel="stylesheet">
@@ -37,11 +37,11 @@
             <strong>{{session('coc')}}</strong>
             </div>
             @endif
-            <form method="post" action="{{url('isLogIn')}}">
+            <form method="post" action="{{url('isLogIn1')}}">
               <h1>Login Form</h1>
               @csrf
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" name="username" />
+                <input type="email" class="form-control" placeholder="email" required="" name="email" />
               </div>
               <div>
                 <input type="password" class="form-control" placeholder="Password" required="" name="password" />
@@ -60,7 +60,7 @@
                 <br />
 
                 <div>
-                  <h1><i class="fa fa-paw"></i> Admin Login</h1>
+                  <h1><i class="fa fa-paw"></i> Student LogIn</h1>
                   <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
                 </div>
               </div>

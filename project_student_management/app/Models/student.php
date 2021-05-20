@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class student extends Model
 {
-    public $fillable = array ('sname','fname','class','phnum','email');
+    public $fillable = array ('sname','class','phnum','email','password',);
+    use HasFactory;
 }

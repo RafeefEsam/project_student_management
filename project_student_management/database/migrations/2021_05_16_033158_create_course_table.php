@@ -16,7 +16,7 @@ class CreateCourseTable extends Migration
         Schema::create('course', function (Blueprint $table) {
             $table->id();
             $table->string('cname');
-            $table->integer('branchid');
+            $table->string('branchname');
             $table->timestamps();
         });
     }

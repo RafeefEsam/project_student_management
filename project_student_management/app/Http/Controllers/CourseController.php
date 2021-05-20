@@ -28,7 +28,7 @@ class CourseController extends Controller
     {
         $branches = branch::all();
         return view('courseadd',compact('branches'));
-        
+
     }
 
     /**
@@ -40,7 +40,7 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         $course = new course;
-        $course->branchid = $request->branchid;
+        $course->branchname = $request->branchname;
         $course->cname = $request->cname;
         $course->save();
         return redirect('addcourse');
@@ -54,9 +54,9 @@ class CourseController extends Controller
      */
     public function show()
     {
-        $courses = course::select('branches.bfull','courses.cname')
-                        ->join('branches','courses.branchid','branches.id')
-                        ->get();
+
+        $courses = course::paginate(5);
+
         return view('courseshow',compact('courses'));
     }
 
@@ -68,7 +68,9 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-        //
+//        echo "heloooooooooooo";
+        $courses = course::find($id);
+        return view('courseedit',compact('courses'));
     }
 
     /**
@@ -80,7 +82,11 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $course = course::find($id);
+        $course->branchname = $request->branchname;
+        $course->cname = $request->cname;
+        $course->save();
+       return redirect('courseshow');
     }
 
     /**
@@ -91,6 +97,8 @@ class CourseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $course = course::find($id);
+        $course->delete();
+        return redirect ('courseshow');
     }
 }

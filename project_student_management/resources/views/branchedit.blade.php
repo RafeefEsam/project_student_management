@@ -5,7 +5,7 @@
 <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
-                 
+
                   <div class="x_content">
                     <br />
                     <form action="{{route('branch.update', $branches->id)}}" method="post" id="demo-form2"  class="form-horizontal form-label-left" enctype="multipart/form-data">
@@ -25,14 +25,13 @@
                           <input type="text"  name="bfull" value="{{$branches->bfull}}" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
-                    
-                  
-                  
+
+
+
                       <div class="ln_solid"></div>
-                      <div class="form-group">
+                      <div style="padding-left: 46%" class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button class="btn btn-primary" type="button">Cancel</button>
-              <button class="btn btn-primary" type="reset">Reset</button>
+                          <button class="btn btn-primary" type="reset">Reset</button>
                           <button type="submit" name="submit" class="btn btn-success">Submit</button>
                         </div>
                       </div>

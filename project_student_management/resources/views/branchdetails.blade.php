@@ -1,7 +1,7 @@
 @extends('layout.default')
 
 @section('content')
-<h1>Student Details</h1>
+<h1>All Branches</h1>
 <table class="table table-bordered">
     <thead>
         <th>Branch full name</th>
@@ -18,7 +18,7 @@
             <td><a href="{{route('branch.delete', ['id' => $branche->id])}}">delete</a></td>
             </tr>
             @endforeach
-        
+
     </tbody>
 </table>
 {{$branches->links()}}

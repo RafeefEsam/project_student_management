@@ -14,9 +14,9 @@
             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Branch name <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <select class="form-control col-md-7 col-xs-12" name="branchid">
+              <select class="form-control col-md-7 col-xs-12" name="branchname">
                 @foreach($branches as $branch)
-                <option value="{{$branch->id}}">{{$branch->bfull}}</option>
+                <option value="{{$branch->bfull}}">{{$branch->bfull}}</option>
                 @endforeach
               </select>
             </div>
@@ -29,10 +29,9 @@
             </div>
           </div>
           <div class="ln_solid"></div>
-          <div class="form-group">
+          <div style="padding-left: 46%" class="form-group">
             <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-              <button class="btn btn-primary" type="button">Cancel</button>
-  <button class="btn btn-primary" type="reset">Reset</button>
+              <button class="btn btn-primary" type="reset">Reset</button>
               <button type="submit" name="submit" class="btn btn-success">Submit</button>
             </div>
           </div>

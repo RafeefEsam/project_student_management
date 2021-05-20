@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Student Management</title>
-    
-    
+
+
     <!-- Bootstrap -->
     <link href="{!! asset('public/theme/vendors/bootstrap/dist/css/bootstrap.min.css') !!}" rel="stylesheet">
     <!-- Font Awesome -->
@@ -21,7 +21,7 @@
 
     <!-- Custom Theme Style -->
     <link href="{!! asset('public/theme/build/css/custom.min.css') !!}" rel="stylesheet">
-    
+
   </head>
 
   <body class="nav-md footer_fixed">
@@ -34,8 +34,9 @@
       </div>
  <!-- footer content -->
         <footer>
-          <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          <div style="margin-left: 37%; font-size: 18px;"  >
+              <strong  >Copyright &copy; 2021/2022 with our best wishes.</strong> All rights
+              reserved.
           </div>
           <div class="clearfix"></div>
         </footer>

@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
-    public $fillable  = array('branchid' ,'cname' );
+    public $fillable  = array('branchname' ,'cname' );
 }

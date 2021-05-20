@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Session;
+
 use App\Models\student;
 
 class StudentController extends Controller
@@ -12,6 +14,26 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+  public function StudentLogIn(){
+        return view('studentlogin');
+    }
+
+    public function studentLoged(Request $request){
+        $student= student::where('email',$request->email)->where('password',$request->password)->get()->toArray();
+        if($student){
+            $request->session()->put('student_session', $student[0]['id']);
+            return redirect('dashboardstudent/');
+        }else{
+            session::flash('coc', 'email and password not match');
+            return redirect('/loginpage1/')->withInput();
+        }
+    }
+   public function dashBoard(){
+        return view('dashboardstudent');
+    }
+
+
     public function index()
     {
         //
@@ -37,10 +59,10 @@ class StudentController extends Controller
     {
         $student = new student;
         $student ->sname = $request ->sname;
-        $student ->fname = $request ->fname;
         $student ->class = $request ->class;
         $student ->phnum = $request ->phnum;
         $student ->email = $request ->email;
+        $student ->password = $request ->password;
         $student -> save();
         return redirect('studentregisterform');
 
@@ -84,10 +106,10 @@ class StudentController extends Controller
         $student = student::find($id);
 
         $student->sname = $request->sname;
-        $student->fname = $request->fname;
         $student->class = $request->class;
         $student->phnum = $request->phnum;
         $student->email = $request->email;
+        $student ->password = $request ->password;
         $student->save();
         return redirect ('studentdetails');
 
