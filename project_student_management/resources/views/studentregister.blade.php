@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 @extends('layout.default')
 @section ('content')
 <h1>Registration page</h1>

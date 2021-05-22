@@ -70,7 +70,8 @@ class CourseController extends Controller
     {
 //        echo "heloooooooooooo";
         $courses = course::find($id);
-        return view('courseedit',compact('courses'));
+        $branches = branch::all();
+        return view('courseedit',compact('courses', 'branches'));
     }
 
     /**
@@ -83,8 +84,10 @@ class CourseController extends Controller
     public function update(Request $request, $id)
     {
         $course = course::find($id);
+
         $course->branchname = $request->branchname;
         $course->cname = $request->cname;
+        
         $course->save();
        return redirect('courseshow');
     }
@@ -101,4 +104,6 @@ class CourseController extends Controller
         $course->delete();
         return redirect ('courseshow');
     }
+
+    
 }

@@ -1,4 +1,6 @@
 <!-- sidebar menu -->
+
+
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <h3>General</h3>
@@ -26,9 +28,13 @@
                   </li>
                     <br>
                     <li>
-                        <a href="../project_student_management">  <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                    <a href="../h">  <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                             Logout </a>
                     </li>
+                    <!--<li>
+                        <a href="{{route('logout')}}">  <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                            Logout </a>
+                    </li> -->
 
                 </ul>
               </div>

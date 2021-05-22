@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 @extends('layout.default')
 
 @section('content')
@@ -15,7 +18,14 @@
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <select class="form-control col-md-7 col-xs-12" name="branchname">
+                                    
                                         <option value="{{$courses->branchname}}">{{$courses->branchname}}</option>
+
+                                        @foreach($branches as $branch)
+                                        @if($branch->bfull != $courses->branchname)
+                                    <option value="{{$branch->bfull}}">{{$branch->bfull}}</option>
+                                    @endif
+                                    @endforeach
                                 </select>
                             </div>
                         </div>

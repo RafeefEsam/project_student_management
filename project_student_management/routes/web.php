@@ -96,6 +96,8 @@ Route::post('/courseupdate/{id}',
     )
 );
 
+
+
 Route::get('/course_delete/{id}',
     array(
         'uses' =>  'App\Http\Controllers\CourseController@destroy',
@@ -103,6 +105,14 @@ Route::get('/course_delete/{id}',
     )
 );
 
+
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::GET('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/logout',
+    array(
+        'uses' =>  'App\Http\Controllers\AdminController@logout',
+        'as'   =>  'logout',
+    )
+);

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 @extends('layout.default')
 
 @section('content')
