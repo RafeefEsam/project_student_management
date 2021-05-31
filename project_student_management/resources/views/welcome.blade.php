@@ -57,8 +57,8 @@ session_start();
                     <ul>
                         <li><a href="?">Home</a></li>
                         <li><a href="#">About us</a></li>
-                        <li><a href="courses.html">Courses</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Courses</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -334,32 +334,7 @@ session_start();
 <!-- course section end -->
 
 
-<!-- signup section -->
-<section class="signup-section spad">
-    <div class="signup-bg set-bg" data-setbg="public/img/signup-bg.jpg"></div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="signup-warp">
-                    <div class="section-title text-white text-left">
-                        <h2>Sign up to became a teacher</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
-                    </div>
-                    <!-- signup form -->
-                    <form class="signup-form">
-                        <input type="text" placeholder="Your Name">
-                        <input type="text" placeholder="Your E-mail">
-                        <input type="text" placeholder="Your Phone">
-                        <label for="v-upload" class="file-up-btn">Upload Course</label>
-                        <input type="file" id="v-upload">
-                        <button class="site-btn">Search Couse</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- signup section end -->
+
 
 
 <!-- banner section -->
