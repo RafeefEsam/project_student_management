@@ -9,14 +9,14 @@
 
                   </li>
                     <br>
-                  <li><a href="{{url('studentdetails')}}"><i class="fa fa-edit"></i> Student Details </a>
+                  <li><a href="{{url('studentdetails')}}"><i class="fa fa-edit"></i>View Student  </a>
 
                   </li>
                     <br>
-                    <li><a><i class="fa fa-edit"></i> Branch <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-edit"></i> Program <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="{{url('addbranch')}}">Add Branch</a></li>
-                            <li><a href="{{url('branchshow')}}">View Branches</a></li>
+                            <li><a href="{{url('addbranch')}}">Add Program</a></li>
+                            <li><a href="{{url('branchshow')}}">View Program</a></li>
                         </ul>
                     </li>
                     <br>
@@ -28,7 +28,7 @@
                   </li>
                     <br>
                     <li>
-                    <a href="../h">  <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                    <a href="./">  <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                             Logout </a>
                     </li>
                     <!--<li>

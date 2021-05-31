@@ -18,6 +18,11 @@ return [
         'passwords' => 'users',
     ],
 
+'defaults' => [
+        'guard' => 'web',
+        'passwords' => 'students',
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Authentication Guards
@@ -48,6 +53,19 @@ return [
         ],
     ],
 
+    'guards' => [
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'students',
+        ],
+
+        'api' => [
+            'driver' => 'token',
+            'provider' => 'students',
+            'hash' => false,
+        ],
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | User Providers
@@ -69,6 +87,13 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+    ],
+
+        'providers' => [
+        'students' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\student::class,
         ],
 
         // 'users' => [
@@ -95,6 +120,15 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+    ],
+
+    'passwords' => [
+        'students' => [
+            'provider' => 'students',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

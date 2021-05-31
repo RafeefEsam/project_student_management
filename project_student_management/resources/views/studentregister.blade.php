@@ -48,6 +48,8 @@ session_start();
                             <input type="text"  name="password" id="password" name="password" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                   </div>
+
+
                       <div class="ln_solid"></div>
                       <div style="padding-left: 46%" class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">

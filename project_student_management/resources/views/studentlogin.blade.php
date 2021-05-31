@@ -40,7 +40,7 @@ session_start();
             <strong>{{session('coc')}}</strong>
             </div>
             @endif
-            <form method="post" action="{{url('isLogIn1')}}">
+            <form method="post" action="{{url('isLogIn')}}">
               <h1>Login Form</h1>
               @csrf
               <div>

@@ -3,7 +3,7 @@ session_start();
 ?>
 @extends('layout.default')
 @section ('content')
-    <h1>Student Details</h1>
+    <h1>Student </h1>
 
      <table class="table table-bordered scontent">
         <thead>

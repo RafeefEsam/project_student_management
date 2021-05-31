@@ -108,11 +108,16 @@ Route::get('/course_delete/{id}',
 
 Auth::routes();
 
-//Route::GET('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/logout',
-    array(
-        'uses' =>  'App\Http\Controllers\AdminController@logout',
-        'as'   =>  'logout',
-    )
-);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+Route::get('create',[App\Http\Controllers\DecumentController::class,'create']);
+Route::post('files',[App\Http\Controllers\DecumentController::class, 'store']);
+Route::get('files',[App\Http\Controllers\DecumentController::class,'index']);
+Route::get('files/{id}',[App\Http\Controllers\DecumentController::class,'show']);
+Route::get('file/download/{file}',[App\Http\Controllers\DecumentController::class,'download']);
+
+
+Route::get('studentprofile',[App\Http\Controllers\LogStudentController::class,'create']);

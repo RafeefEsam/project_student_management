@@ -3,7 +3,7 @@ session_start();
 ?>
 @extends('layout.default')
 @section ('content')
-<h1>Branch Edit</h1>
+<h1>Program Edit</h1>
 
 <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
@@ -15,14 +15,14 @@ session_start();
                     @csrf
 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Branch sort name <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Program sort name <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" name="bsort" value="{{$branches->bsort}}" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Branch full name <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Program full name <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text"  name="bfull" value="{{$branches->bfull}}" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12">

@@ -1,14 +1,15 @@
+
 <?php
 session_start();
 ?>
 @extends('layout.default')
 
 @section('content')
-<h1>All Branches</h1>
+<h1>All Program</h1>
 <table class="table table-bordered">
     <thead>
-        <th>Branch full name</th>
-        <th>Branch sort name</th>
+        <th>Program full name</th>
+        <th>Program sort name</th>
         <th>Edit</th>
         <th>Delete</th>
     </thead>

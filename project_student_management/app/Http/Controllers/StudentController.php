@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Session;
 
 use App\Models\student;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class StudentController extends Controller
 {
